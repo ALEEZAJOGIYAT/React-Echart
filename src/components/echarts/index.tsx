@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Typography } from 'antd';
+import { Layout } from 'antd';
 import './style.css'
 import { SideBar } from '../sideBar/sideBar';
 import {GraphComponent} from '../graph';

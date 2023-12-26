@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Layout, Typography } from 'antd';
+import { Button, Layout } from 'antd';
 import './style.css'
-const { Header, Content, Sider } = Layout;
+const {Sider } = Layout;
 
 
 export const SideBar = () => {
