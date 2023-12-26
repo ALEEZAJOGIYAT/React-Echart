@@ -1,13 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { HomePage } from './components/home/Home';
-import { PageLayout } from './components/echarts/echarts';
+import { PageLayout } from './components/echarts';
 
 function App() {
   return (
     <div className="App">
-      {/* <HomePage/> */}
       <PageLayout/>
     </div>
   );

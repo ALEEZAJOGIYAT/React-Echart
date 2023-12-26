@@ -1,13 +1,10 @@
-// PageLayout.tsx
 import React from 'react';
 import { Layout, Typography } from 'antd';
-// import 'antd/dist/antd.css';
 import './style.css'
 import { SideBar } from '../sideBar/sideBar';
 import {GraphComponent} from '../graph';
 
-const { Header, Content, Sider } = Layout;
-const { Title } = Typography;
+const {Content} = Layout;
 
 export const PageLayout = () => {
   return (
