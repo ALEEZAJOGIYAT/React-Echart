@@ -1,5 +1,6 @@
-// GraphComponent.tsx
-import './style.css'; // Import your Sass file
+
+import React from 'react';
+import './style.css';
 import ReactEcharts from 'echarts-for-react';
 import { DatePicker } from 'antd';
 import type { DatePickerProps } from 'antd';

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Button, Layout } from 'antd';
+import { Button, Layout, Menu } from 'antd';
+import { CloseOutlined, RightOutlined } from "@ant-design/icons";
+import { useMediaQuery } from "react-responsive";
+
 import './style.css'
 const {Sider } = Layout;
 
@@ -7,13 +10,48 @@ const {Sider } = Layout;
 export const SideBar = () => {
 
     const [showDetails, setShowDetails] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
+
+    const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
     const handleShowDetails = () => {
         setShowDetails(true)
     }
 
     return(
-        <div className="main-container">
+        
+              {!isMobile ? (
+                    <Sider
+                    collapsed={collapsed}
+                    onCollapse={(value) => {
+                        console.log(value);
+                        setCollapsed(value);
+                    }}
+                    width={243}
+                    style={{
+                        overflow: "auto",
+                        height: "100vh",
+                        position: "fixed",
+                        left: 0,
+                        top: 0,
+                        bottom: 0,
+                        backgroundColor: "#4A0D37",
+                    }}
+                    >
+                        <div>
+                            <CloseOutlined onClick={() => setCollapsed(true)} />
+
+                            {collapsed && (
+                                <div onClick={() => setCollapsed(false)} className="collapsed_icon">
+                                <RightOutlined />
+                                </div>
+                            )}
+                        </div>
+
+                    </Sider>
+              ) : 
+              <>
+        <div className="main-container">            
             <Sider className="sidebar" theme="light" style={{height: '100%'}}>
                 <div className="main-heading">
                     <h2>Summary</h2>
@@ -43,7 +81,9 @@ export const SideBar = () => {
                         <Button style={{width:'100%'}} onClick={handleShowDetails}>View Details</Button>
                         <h4>Legend</h4>
                 </div>
-            </Sider>            
+            </Sider>           
+ 
         </div>
+            </>
     )
 }
