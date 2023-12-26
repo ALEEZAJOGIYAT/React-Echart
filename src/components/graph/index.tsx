@@ -1,8 +1,16 @@
 // GraphComponent.tsx
 import './style.css'; // Import your Sass file
 import ReactEcharts from 'echarts-for-react';
+import { DatePicker } from 'antd';
+import type { DatePickerProps } from 'antd';
+
 
 export const GraphComponent = () => {
+
+  const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+    console.log(date, dateString);
+  };
+
   const highPerformer = [
     9.00000,
     110000,
@@ -90,6 +98,8 @@ export const GraphComponent = () => {
       <div className='headings'>
         <h4>Comparison of high performer resignation rates to the overall resignation rates</h4>
         <p className='heading-p'>Do high performers resign more often than others</p>
+        <DatePicker onChange={onChange} picker="month" style={{width:'15%'}}/>
+        <br/>
       </div>
       <div className="graph-container">
         <ReactEcharts option={option} />
