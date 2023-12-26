@@ -7,6 +7,7 @@
 .sidebar-content{
   height: 58%;
   margin-top: 23px;
+  margin-left: 12px
 }
 .sidebar .sidebar-content h3 {
   margin-bottom: 10px;
@@ -20,7 +21,10 @@
 .sidebar .sidebar-content .options-list p:hover {
   color: blue;
 }
-
+.options-list {
+  background-color: #ddd4d1;
+  padding: 5px;
+}
 @media (max-width: 768px) {
   .sidebar {
     width: 30%;
@@ -46,4 +50,16 @@
 .options-list .p{
   font-size: 20px;
   font-weight: 300;
+}
+
+.main-heading{
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+.options-list-content{
+  font-size: 10px;
+}
+.main-container {
+  height: 100%;
 }

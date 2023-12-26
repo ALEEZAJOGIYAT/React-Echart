@@ -10,12 +10,13 @@ export const PageLayout = () => {
   return (
     <Layout className="page-layout">
       <Layout className="main-layout">
-        <Content className="content" style={{width: '60%'}}>
+        <Content className="content">
           {/* Graph Component */}
           <GraphComponent/>
         </Content>
-        {/* side Bar Component */}
-        <SideBar/>
+        <div style={{marginTop:'-11px', backgroundColor:'£6b6a6a'}}>
+          <SideBar/>
+        </div>
       </Layout>
     </Layout>
   );
