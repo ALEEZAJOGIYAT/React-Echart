@@ -41,7 +41,7 @@ export const SideBar = () => {
                     }
                     <br/>
                         <Button style={{width:'100%'}} onClick={handleShowDetails}>View Details</Button>
-                        <h4>Lengend</h4>
+                        <h4>Legend</h4>
                 </div>
             </Sider>            
         </div>
