@@ -86,10 +86,13 @@ export const GraphComponent = () => {
   };
 
   return (
-    <div className="graph-container">
+    <div>
       <h4>Comparison of high performer resignation rates to the overall resignation rates</h4>
       <p>Do high performers resign more often than others</p>
-      <ReactEcharts option={option} />
+      <div className="graph-container">
+        <ReactEcharts option={option} />
+      </div>
+
     </div>
   );
 };
