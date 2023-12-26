@@ -1,8 +1,22 @@
-/* Sidebar.scss */
+/* Sidebar.css */
 .sidebar {
   background: #f0f0f0;
   padding: 10px;
 }
+
+.sidebar .sidebar-content h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar .sidebar-content .options-list p {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-content .options-list p:hover {
+  color: blue;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     width: 30%;
