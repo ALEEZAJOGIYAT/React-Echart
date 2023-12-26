@@ -1,0 +1,17 @@
+.sidebar {
+    background: #f0f0f0;
+    padding: 10px;
+  }
+
+  @media (max-width: 768px) {
+  .page-layout .main-layout .sidebar {
+    width: 30%;
+  }
+}
+
+.main-container {
+    height: 100%;
+    margin-top: -0.1px;
+    padding-top: 0.1px;
+}
+
