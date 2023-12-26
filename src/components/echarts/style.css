@@ -1,4 +1,4 @@
-/* PageLayout.css */
+/* PageLayout.scss */
 .page-layout {
   min-height: 100vh;
 }
@@ -14,23 +14,4 @@
 .page-layout .main-layout .content {
   flex: 1;
   padding: 20px;
-}
-.page-layout .main-layout .content .graph-container {
-  height: 400px;
-  background: #f0f0f0;
-  transition: all 0.3s ease-in-out;
-}
-@media (max-width: 768px) {
-  .page-layout .main-layout .content .graph-container {
-    height: 300px;
-  }
-}
-.page-layout .main-layout .sidebar {
-  background: #f0f0f0;
-  padding: 10px;
-}
-@media (max-width: 768px) {
-  .page-layout .main-layout .sidebar {
-    width: 30%;
-  }
 }

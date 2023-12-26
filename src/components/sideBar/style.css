@@ -1,17 +1,27 @@
+/* Sidebar.scss */
 .sidebar {
-    background: #f0f0f0;
-    padding: 10px;
-  }
-
-  @media (max-width: 768px) {
-  .page-layout .main-layout .sidebar {
+  background: #f0f0f0;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .sidebar {
     width: 30%;
   }
 }
-
-.main-container {
-    height: 100%;
-    margin-top: -0.1px;
-    padding-top: 0.1px;
+/* PageLayout.scss */
+.page-layout {
+  min-height: 100vh;
 }
-
+.page-layout .header {
+  background: #fff;
+  text-align: center;
+  /* padding: 10px; */
+}
+.page-layout .main-layout {
+  display: flex;
+  flex-direction: row;
+}
+.page-layout .main-layout .content {
+  flex: 1;
+  padding: 20px;
+}

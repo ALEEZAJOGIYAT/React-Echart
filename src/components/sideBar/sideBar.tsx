@@ -6,10 +6,9 @@ const { Header, Content, Sider } = Layout;
 
 
 export const SideBar = () => {
-
     return(
         <div className="main-container">
-            <Sider className="sidebar" width="30%" theme="light">
+            <Sider className="sidebar"  theme="light" style={{height: '100%'}}>
             <TextArea>
                 Sidebar Content
             </TextArea>

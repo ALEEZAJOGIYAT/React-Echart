@@ -5,27 +5,22 @@ import { Layout, Typography } from 'antd';
 import './style.css'
 import TextArea from 'antd/es/input/TextArea';
 import { SideBar } from '../sideBar/sideBar';
+import {GraphComponent} from '../graph';
 
 const { Header, Content, Sider } = Layout;
 const { Title } = Typography;
 
-export const PageLayout: React.FC = () => {
+export const PageLayout = () => {
   return (
     <Layout className="page-layout">
-      <Header className="header">
-        <Title level={2}>Your Title Here</Title>
-      </Header>
       <Layout className="main-layout">
-        <Content className="content">
+        <Content className="content" style={{width: '60%'}}>
           {/* Graph Component */}
-          <div className="graph-container">
-            {/* Replace this with your graph component */}
-            Graph Component
-          </div>
+          <GraphComponent/>
         </Content>
-        {/* <SideBar/> */}
-        <Sider className="sidebar" width="30%" theme="light">
-        <TextArea>
+        <SideBar/>
+        {/* <Sider className="sidebar" theme="light">
+        <TextArea style={{width : '70%'}}>
             Sidebar Content
           </TextArea>
           <br/>
@@ -43,7 +38,7 @@ export const PageLayout: React.FC = () => {
           <TextArea>
             Sidebar Content
           </TextArea>
-        </Sider>
+        </Sider> */}
       </Layout>
     </Layout>
   );
