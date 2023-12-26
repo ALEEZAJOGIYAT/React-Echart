@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Button, Layout } from 'antd';
 import './style.css'
-import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-  } from '@ant-design/icons';
+import {MenuUnfoldOutlined,} from '@ant-design/icons';
   
 const {Sider } = Layout;
 
