@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import ReactEcharts from 'echarts-for-react';
 import { NegativeBarChart } from './negativeBarChart';
+import { Input } from 'antd';
 
 export const GraphComponent = () => {
 
@@ -117,17 +118,17 @@ export const GraphComponent = () => {
       <div className='data-points-inputs'>
         <label>
           Data:1
-          <input type="text" onChange={handleCustomDataOneChange} />
+          <Input type="text" onChange={handleCustomDataOneChange} />
         </label>
         <br />
         <label>
-          Data:2
-          <input type="text" onChange={handleCustomDataTwoChange} />
+            Data:2
+          <Input style={{marginLeft:'5px'}} type="text" onChange={handleCustomDataTwoChange} />
         </label>
         <br />
         <label>
-         Labels:
-          <input type="text" onChange={handleYAxisLabelsChange} />
+          Labels:
+          <Input style={{marginLeft:'10px'}} type="text" onChange={handleYAxisLabelsChange} />
         </label>
       </div>
 
