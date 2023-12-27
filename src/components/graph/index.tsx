@@ -1,31 +1,30 @@
-
 import React from 'react';
 import './style.css';
 import ReactEcharts from 'echarts-for-react';
-
+import { NegativeBarChart } from './negativeBarChart';
 
 export const GraphComponent = () => {
   const highPerformer = [
-    9.00000,
-    110000,
-    120000,
-    130000,
-    133000,
-    240000,
-    138370,
-    153000,
-    160000,
+    0.0937,
+    0.11,
+    0.119,
+    0.123,
+    0.125,
+    0.129,
+    0.137,
+    0.153,
+    0.16,
   ];
   const overAllPerformer = [
-    70000,
+    0.0859,
     0,
-    110000,
-    120000,
-    93600,
-    310000,
-    108370,
-    163000,
-    160000,
+    0.109,
+    0.12,
+    0.0927,
+    0.208,//0.31,
+    0.116,
+    0.181,
+    0.16,
   ];
 
   const option = {
@@ -33,7 +32,12 @@ export const GraphComponent = () => {
       trigger: 'axis',
       axisPointer: {
         type: 'shadow',
-      }
+      },
+      formatter: (params: any) => {
+        return `${params[0].name}: ${(
+          params[0].value * 100
+        ).toFixed(2)}%`;
+      },
     },
     legend: {},
     grid: {
@@ -67,7 +71,7 @@ export const GraphComponent = () => {
       {
         name: 'April 2018',
         type: 'bar',
-        data: highPerformer.map((value) => (value / 1000).toFixed(2)), // Converting into percentages 
+        data: highPerformer.map((value) => (value * 100).toFixed(2)), // Convert into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(114 196 237)',
@@ -77,7 +81,7 @@ export const GraphComponent = () => {
       {
         name: 'March 2019',
         type: 'bar',
-        data: overAllPerformer.map((value) => (value / 1000).toFixed(2)), // Convert into percentages 
+        data: overAllPerformer.map((value) => (value * 100).toFixed(2)), // Convert into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(255, 84, 84)',
@@ -88,13 +92,15 @@ export const GraphComponent = () => {
   };
 
   return (
-      <div className="graph-container">
-        <div className='bar-graph'>
-          <ReactEcharts option={option} />
-        </div>
-        <div className='next-graph'>
-          <ReactEcharts option={option} />
-        </div>
+    <div className="graph-container">
+      <div className='bar-graph'>
+        <ReactEcharts option={option} />
+      </div>
+      <div className='next-graph'>
+        <NegativeBarChart />
+      </div>
     </div>
   );
 };
+
+export default GraphComponent;
