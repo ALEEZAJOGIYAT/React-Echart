@@ -3,13 +3,9 @@
   background-color: #f5f2f2;
 
 }
-
-
-
 .sidebar-headings{
   padding: 8px;
 }
-
 .sidebar-content{
   padding: 8px;
   margin-top: 22px;
@@ -42,7 +38,6 @@
 }
 .legend-card{
   background: white;
-  /* margin-top: 10px; */
   width: 152%
 }
 

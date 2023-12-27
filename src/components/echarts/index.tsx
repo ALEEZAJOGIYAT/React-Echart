@@ -6,21 +6,10 @@ import {GraphComponent} from '../graph';
 import type { DatePickerProps } from 'antd';
 import { useMediaQuery } from 'react-responsive';
 import { MobileSideBar } from '../sideBar/mobileSideBar';
-import {MenuUnfoldOutlined,} from '@ant-design/icons';
 
-
-
-const {Content} = Layout;
 
 export const PageLayout = () => {
-
-  const isMobile = useMediaQuery({ query: '(max-width: 700px)' })
-  const [collapsed, setCollapsed] = useState<boolean>(false);
-    
-  const toggleCollapsed = () => {
-    isMobile ? setCollapsed(true) :
-    setCollapsed(true);
-  } 
+  const isMobile = useMediaQuery({ query: '(max-width: 700px)' })    
 
   const onChange: DatePickerProps['onChange'] = (date, dateString) => {
     console.log(date, dateString);
