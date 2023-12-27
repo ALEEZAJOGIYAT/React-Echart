@@ -62,7 +62,7 @@ export const NegativeBarChart = () => {
             },
             itemStyle: {
                 normal: {
-                  color: 'rgb(59, 209, 209)',
+                  color: 'aqua',
                 },
             },      
             data: [

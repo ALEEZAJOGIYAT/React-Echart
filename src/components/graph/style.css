@@ -31,3 +31,8 @@
   width: 200%;
 
 }
+.data-points-inputs{
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
