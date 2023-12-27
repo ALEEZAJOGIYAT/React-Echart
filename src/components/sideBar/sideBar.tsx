@@ -50,7 +50,7 @@ export const SideBar = () => {
                             <hr />
                             <h4 className="options-list-content" style={{color:'red'}}>High Performer - 14.1%</h4>
                             <hr />
-                            <h4 className="options-list-content">Resignation Count - 152</h4>
+                            <h4 className="options-list-content"> Count - 152</h4>
                             <hr />
                             <h4 className="options-list-content">Average Head Count 108k</h4>
                             <hr />
