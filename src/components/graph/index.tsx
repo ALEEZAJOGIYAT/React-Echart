@@ -4,7 +4,7 @@ import ReactEcharts from 'echarts-for-react';
 import { NegativeBarChart } from './negativeBarChart';
 
 export const GraphComponent = () => {
-  const highPerformer = [
+  const april2018Data = [
     0.0937,
     0.11,
     0.119,
@@ -15,13 +15,13 @@ export const GraphComponent = () => {
     0.153,
     0.16,
   ];
-  const overAllPerformer = [
+  const march2019Data = [
     0.0859,
     0,
     0.109,
     0.12,
     0.0927,
-    0.208,//0.31,
+    0.208,
     0.116,
     0.181,
     0.16,
@@ -50,7 +50,7 @@ export const GraphComponent = () => {
       type: 'value',
       boundaryGap: [0, 0.01],
       axisLabel: {
-        formatter: '{value}%', // Format x-axis labels as percentages
+        formatter: '{value}%', // Formating x-axis labels as percentages
       },
     },
     yAxis: {
@@ -71,7 +71,7 @@ export const GraphComponent = () => {
       {
         name: 'April 2018',
         type: 'bar',
-        data: highPerformer.map((value) => (value * 100).toFixed(2)), // Convert into percentages 
+        data: april2018Data.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(114 196 237)',
@@ -81,7 +81,7 @@ export const GraphComponent = () => {
       {
         name: 'March 2019',
         type: 'bar',
-        data: overAllPerformer.map((value) => (value * 100).toFixed(2)), // Convert into percentages 
+        data: march2019Data.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(255, 84, 84)',

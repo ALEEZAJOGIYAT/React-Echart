@@ -38,9 +38,9 @@ export const PageLayout = () => {
         <GraphComponent/>
         </Col>
         <Col lg={6} xs={4}>
-        {isMobile ? 
-          <MobileSideBar/> : <SideBar/>
-          }
+          {isMobile ? 
+            <MobileSideBar/> : <SideBar/>
+            }
         </Col>
       </Row>
     </div>

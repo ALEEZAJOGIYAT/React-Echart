@@ -6,6 +6,10 @@
 .sidebar-headings{
   padding: 8px;
 }
+.sidebar-subheading{
+  font-size: 12px;
+  padding-top: 23px
+}
 .sidebar-content{
   padding: 8px;
   margin-top: 22px;

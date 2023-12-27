@@ -18,7 +18,7 @@ export const SideBar = () => {
                 <Sider >
                     <div className="sidebar-headings">
                         <h2>Summary</h2>
-                        <h3 style={{fontSize: '12px', paddingTop:'23px'}}>April 2018- Mar 2019</h3>
+                        <h3 className="sidebar-subheading">April 2018- Mar 2019</h3>
                     </div>
                     
                     <div style={{paddingLeft: '12px'}}>
