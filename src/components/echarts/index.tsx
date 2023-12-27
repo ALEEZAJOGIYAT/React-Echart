@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Col, DatePicker, Layout, Row } from 'antd';
+import React from 'react';
+import { Button, Col, DatePicker, Row } from 'antd';
 import './style.css'
 import { SideBar } from '../sideBar/sideBar';
 import {GraphComponent} from '../graph';
