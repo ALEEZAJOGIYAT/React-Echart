@@ -1,24 +1,21 @@
 /* GraphComponent.scss */
-.graph-container {
-    height: 400px;
-    background: #f0f0f0;
+.bar-graph {
+    height: 200px;
+    width: 500px;
     transition: all 0.3s ease-in-out;
   }
   @media (max-width: 768px) {
     .graph-container {
-      height: 300px;
+      height: 100px;
     }
   }
   
-.headings{
-  margin-right: auto;
+.graph-container {
   display: flex;
-  flex-direction: column;
-  margin-right: 94px;
-
+  flex-direction: row;
 }
-.heading-p {
-  margin-right: 225px;
-   margin-top:-13px;
-   margin-bottom:35px
+.next-graph{
+  height: 100px;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
 }

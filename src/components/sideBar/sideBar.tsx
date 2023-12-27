@@ -25,7 +25,6 @@ export const SideBar = () => {
                 <Button
                     // type="primary"
                     onClick={toggleCollapsed}
-                    style={{ marginTop: 16 }}
                 >
                     <MenuUnfoldOutlined />
                 </Button>

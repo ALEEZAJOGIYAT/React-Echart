@@ -1,5 +1,22 @@
-/* Sidebar.css */
-.sidebar {
+sidebar-container{
+  height: 98vh;
+  background-color: #f5f2f2;
+
+}
+
+.sidebar-headings{
+  padding: 8px;
+}
+.sidebar-content{
+  padding: 8px;
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* .sidebar {
   background-color: #6b6a6a;
   padding: 10px;
 }
@@ -30,14 +47,12 @@
     width: 30%;
   }
 }
-/* PageLayout.scss */
 .page-layout {
   min-height: 100vh;
 }
 .page-layout .header {
   background: #fff;
   text-align: center;
-  /* padding: 10px; */
 }
 .page-layout .main-layout {
   display: flex;
@@ -62,4 +77,4 @@
 }
 .main-container {
   height: 92vh;
-}
+} */

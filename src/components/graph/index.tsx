@@ -2,16 +2,9 @@
 import React from 'react';
 import './style.css';
 import ReactEcharts from 'echarts-for-react';
-import { DatePicker } from 'antd';
-import type { DatePickerProps } from 'antd';
 
 
 export const GraphComponent = () => {
-
-  const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    console.log(date, dateString);
-  };
-
   const highPerformer = [
     9.00000,
     110000,
@@ -72,7 +65,7 @@ export const GraphComponent = () => {
     },
     series: [
       {
-        name: 'High Performer',
+        name: 'April 2018',
         type: 'bar',
         data: highPerformer.map((value) => (value / 1000).toFixed(2)), // Converting into percentages 
         itemStyle: {
@@ -82,7 +75,7 @@ export const GraphComponent = () => {
         },
       },
       {
-        name: 'OverAll Performer',
+        name: 'March 2019',
         type: 'bar',
         data: overAllPerformer.map((value) => (value / 1000).toFixed(2)), // Convert into percentages 
         itemStyle: {
@@ -95,17 +88,13 @@ export const GraphComponent = () => {
   };
 
   return (
-    <div className='graph-wrapper'>
-      <div className='headings'>
-        <h4>Comparison of high performer resignation rates to the overall resignation rates</h4>
-        <p className='heading-p'>Do high performers resign more often than others</p>
-        <DatePicker onChange={onChange} picker="month" style={{width:'15%'}}/>
-        <br/>
-      </div>
       <div className="graph-container">
-        <ReactEcharts option={option} />
-      </div>
-
+        <div className='bar-graph'>
+          <ReactEcharts option={option} />
+        </div>
+        <div className='next-graph'>
+          <ReactEcharts option={option} />
+        </div>
     </div>
   );
 };
