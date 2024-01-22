@@ -75,8 +75,6 @@ const tempCate = [
     37613.21588611603,
   ];
 
-  console.log(sales_2019.length, sales_2021.length,april2018Data.length, march2019Data.length, tempCate.length , categories.length ,'lenjhdfbjsbhfjdsbdsjbdh')
-
 
   const option = {
     tooltip: {
@@ -97,10 +95,6 @@ const tempCate = [
       bottom: '1%',
       containLabel: true,
     },
-    globe: {
-      height:'auto',
-      width:'auto',
-    },
     xAxis: {
       type: 'value',
       boundaryGap: [0, 0.01],
@@ -110,13 +104,13 @@ const tempCate = [
     },
     yAxis: {
       type: 'category',
-      data: categories
+      data: tempCate
     },
     series: [
       {
         name: 'April 2018',
         type: 'bar',
-        data: sales_2021.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
+        data: april2018Data.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(114 196 237)',
@@ -126,7 +120,7 @@ const tempCate = [
       {
         name: 'March 2019',
         type: 'bar',
-        data: sales_2019.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
+        data: march2019Data.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(255, 84, 84)',
@@ -149,7 +143,9 @@ const tempCate = [
         <div className='bar-graph'>
           <ReactEcharts option={option} />
         </div>
-        <NegativeBarChart/>
+        <div className='next-graph'>
+          <NegativeBarChart />
+        </div>
       </div>
 
     </div>
