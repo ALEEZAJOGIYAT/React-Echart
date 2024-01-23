@@ -144,7 +144,7 @@ const tempCate = [
             style={{width:'50%'}}
           />      
 
-      {/* <div className="graph-container">
+      {/* <div className="-container">
         <div className='bar-graph'> */}
           <ReactEcharts option={option} />
 
