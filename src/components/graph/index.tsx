@@ -138,19 +138,16 @@ const tempCate = [
 
   return (
     <div>
-      <div>
         <Input
             placeholder="Enter JSON data"
             onChange={handleJsonChange}
             style={{width:'50%'}}
           />      
-      </div>
-      <div className="graph-container">
-        <div className='bar-graph'>
+
+      {/* <div className="graph-container">
+        <div className='bar-graph'> */}
           <ReactEcharts option={option} />
-        </div>
-        <NegativeBarChart/>
-      </div>
+
 
     </div>
   );
