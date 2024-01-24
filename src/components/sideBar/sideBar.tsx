@@ -13,9 +13,8 @@ export const SideBar = () => {
     }
 
     return(
-        <div>
             <div className="sidebar-container">
-                <Sider >
+                <Sider>
                     <div className="sidebar-headings">
                         <h2>Summary</h2>
                         <h3 className="sidebar-subheading">April 2018- Mar 2019</h3>
@@ -55,6 +54,5 @@ export const SideBar = () => {
                     </div>
                 </Sider>            
             </div>
-        </div>
     )
 }

@@ -1,62 +1,29 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import './style.css';
 import ReactEcharts from 'echarts-for-react';
-import { NegativeBarChart } from './negativeBarChart';
 import { Input } from 'antd';
 
-export const GraphComponent = () => {
+interface SaleData {
+  subcategory: string;
+  d__2019sale: number;
+  d__2021sale: number;
+}
+export const GraphComponent: React.FC = () => {
 
-  const [xAxisDataOne, SetXAxisDataOne] = useState<number[]>([]);
-  const [xAxisDataTwo, SetXAxisDataTwo] = useState<number[]>([]);
-  const [yAxisLabel, SetYAxisLabels] = useState<string[]>([
-    'Product',
-    'Office of CEO',
-    'Marketing',
-    'Customer Support',
-    'Finance',
-    'HR',
-    'IT',
-    'Sales',
-    'Operations'
-  ]);
+  const [jsonData, setJsonData] = useState<SaleData[]>([]);
 
-  const april2018Data = [
-    0.0937,
-    0.11,
-    0.119,
-    0.123,
-    0.125,
-    0.129,
-    0.137,
-    0.153,
-    0.16,
-  ];
-  const march2019Data = [
-    0.0859,
-    0,
-    0.109,
-    0.12,
-    0.0927,
-    0.208,
-    0.116,
-    0.181,
-    0.16,
-  ];
-
-  const handleCustomDataOneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    SetXAxisDataOne(event.target.value.split(',').map(parseFloat)); //Parsed data
+  const handleJsonChange = (e: ChangeEvent<HTMLInputElement>) => {
+    try {
+      const parsedData: SaleData[] = JSON.parse(e.target.value);
+      setJsonData(parsedData);
+    } catch (error) {
+      console.error('Invalid JSON format');
+    }
   };
 
-  const handleCustomDataTwoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      SetXAxisDataTwo(event.target.value.split(',').map(parseFloat));
-  };
-
-  const handleYAxisLabelsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    SetYAxisLabels(event.target.value.split(','));
-  };
-
-  const dataOne = xAxisDataOne.length > 0 ? xAxisDataOne : april2018Data;
-  const dataTwo = xAxisDataTwo.length > 0 ? xAxisDataTwo : march2019Data;
+  const categories = jsonData.map((item) => item.subcategory);
+  const sales_2019 = jsonData.map((item) => item.d__2019sale);
+  const sales_2021 = jsonData.map((item) => item.d__2021sale);
 
 
   const option = {
@@ -75,7 +42,7 @@ export const GraphComponent = () => {
     grid: {
       left: '3%',
       right: '4%',
-      bottom: '3%',
+      bottom: '1%',
       containLabel: true,
     },
     xAxis: {
@@ -87,13 +54,13 @@ export const GraphComponent = () => {
     },
     yAxis: {
       type: 'category',
-      data: yAxisLabel,
+      data: categories
     },
     series: [
       {
         name: 'April 2018',
         type: 'bar',
-        data: dataOne.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
+        data: sales_2021.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(114 196 237)',
@@ -103,7 +70,7 @@ export const GraphComponent = () => {
       {
         name: 'March 2019',
         type: 'bar',
-        data: dataTwo.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
+        data: sales_2019.map((value) => (value * 100).toFixed(2)), // Converting into percentages 
         itemStyle: {
           normal: {
             color: 'rgb(255, 84, 84)',
@@ -114,34 +81,15 @@ export const GraphComponent = () => {
   };
 
   return (
-    <div>
-      <div className='data-points-inputs'>
-        <label>
-          Data:1
-          <Input type="text" onChange={handleCustomDataOneChange} />
-        </label>
-        <br />
-        <label>
-            Data:2
-          <Input style={{marginLeft:'5px'}} type="text" onChange={handleCustomDataTwoChange} />
-        </label>
-        <br />
-        <label>
-          Labels:
-          <Input style={{marginLeft:'10px'}} type="text" onChange={handleYAxisLabelsChange} />
-        </label>
-      </div>
-
-      <div className="graph-container">
-        <div className='bar-graph'>
-          <ReactEcharts option={option} />
-        </div>
-        <div className='next-graph'>
-          <NegativeBarChart />
-        </div>
-      </div>
-
-    </div>
+    <>
+      <a href='https://drive.google.com/file/d/1F7Rq5igiWH19EJShUoG-r7r_pwdhSrxR/view?usp=drive_link'> Sample Json Data</a>
+        <Input
+            placeholder="Enter JSON data"
+            onChange={handleJsonChange}
+            style={{width:'50%'}}
+          />      
+          <ReactEcharts option={option} style={{height:'70%', width:'78%', position:'absolute'}}/>
+    </>
   );
 };
 

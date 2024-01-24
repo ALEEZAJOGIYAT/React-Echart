@@ -1,11 +1,11 @@
 .bar-graph {
-    height: 200px;
-    width: 500px;
+    /* height: auto;2200 */
+    /* width: auto; */
     transition: all 0.3s ease-in-out;
   }
   @media (max-width: 700px) {
     .graph-container {
-      height: 100px;
+      /* height: auto; */
       display: flex;
       flex-direction: column;
     }
@@ -15,7 +15,7 @@
   display: flex;
 }
 .next-graph{
-  height: 100px;
+  /* height: 100px; */
   width: 200px;
   transition: all 0.3s ease-in-out;
 }
