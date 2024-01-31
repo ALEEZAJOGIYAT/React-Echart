@@ -11,7 +11,6 @@ export const PageLayout = () => {
     <Layout className="page-layout">
       <Layout className="main-layout">
         <Content className="content">
-          {/* Graph Component */}
           <GraphComponent/>
         </Content>
         <div style={{marginTop:'-11px', backgroundColor:'£6b6a6a'}}>
